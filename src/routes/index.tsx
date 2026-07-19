@@ -192,6 +192,15 @@ function Index() {
             >
               x.com/21blabs
             </a>
+            <span className="text-muted-foreground">GitHub</span>
+            <a
+              href="https://github.com/21BLABS"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="labs-link text-foreground"
+            >
+              github.com/21BLABS
+            </a>
           </div>
           <p className="mt-10 max-w-[640px] text-sm text-muted-foreground">
             No forms. No newsletter. Write to one of the above.
