@@ -140,6 +140,36 @@ function Index() {
           </div>
         </section>
 
+        {/* THESIS */}
+        <section className="border-b border-border py-16 md:py-24">
+          <h2 className="text-sm font-medium uppercase tracking-wide text-muted-foreground">
+            THESIS
+          </h2>
+          <div className="mt-10 max-w-[640px] space-y-6 text-sm leading-relaxed text-foreground">
+            <p>
+              Nirvana is not a future state. It is not the reward at the end of
+              a clean build. It is the clear seeing that happens while the code
+              is still compiling, while the market is still moving, while the
+              self that was supposed to attain it has already been seen through.
+            </p>
+            <p>
+              We call this binary bodhi: a post-utopian practice where
+              liberation and engineering are not two things. No separate
+              meditation room, no separate deployment pipeline. The same
+              attention that debugs a smart contract can notice the one who is
+              debugging. The same skepticism that audits an oracle can audit
+              the belief in a fixed self.
+            </p>
+            <p>
+              We do not promise enlightenment-as-a-service. We build systems,
+              write models, and move capital while the non-dual recognition does
+              what it does. Form is not rejected. Emptiness is not romanticized.
+              The work continues, and the clinging to its outcome is what is
+              gently dismantled.
+            </p>
+          </div>
+        </section>
+
         {/* GET IN TOUCH */}
         <section className="border-b border-border py-16 md:py-24">
           <h2 className="text-sm font-medium uppercase tracking-wide text-muted-foreground">
