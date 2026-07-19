@@ -28,11 +28,11 @@
 
 :root {
   --radius: 0px;
-  --background: #000000;
-  --foreground: #EAEAEA;
-  --muted: #000000;
-  --muted-foreground: #888888;
-  --border: #333333;
+  --background: #FFFFFF;
+  --foreground: #000000;
+  --muted: #FFFFFF;
+  --muted-foreground: #666666;
+  --border: #E5E5E5;
 }
 
 @layer base {
@@ -42,11 +42,11 @@
   }
 
   html {
-    background-color: #000000;
+    background-color: #FFFFFF;
   }
 
   body {
-    background-color: #000000;
+    background-color: #FFFFFF;
     color: var(--color-foreground);
     font-family: ui-monospace, "SF Mono", "SFMono-Regular", "JetBrains Mono", "IBM Plex Mono", Menlo, Consolas, monospace;
     -webkit-font-smoothing: antialiased;
