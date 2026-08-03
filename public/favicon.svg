@@ -1,0 +1,39 @@
+<svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="32" height="32" fill="#FFFFFF" />
+  
+  <!-- Bitcoin B symbol -->
+  <g transform="translate(4, 4)">
+    <!-- Outer circle -->
+    <circle
+      cx="12"
+      cy="12"
+      r="10"
+      fill="none"
+      stroke="#000000"
+      strokeWidth="2"
+    />
+    
+    <!-- B letter -->
+    <text
+      x="5"
+      y="17"
+      fontFamily="ui-monospace, SF Mono, SFMono-Regular, JetBrains Mono, IBM Plex Mono, Menlo, Consolas, monospace"
+      fontSize="16"
+      fontWeight="600"
+      fill="#000000"
+    >
+      B
+    </text>
+    
+    <!-- Vertical line (Bitcoin symbol) -->
+    <line
+      x1="12"
+      y1="2"
+      x2="12"
+      y2="22"
+      stroke="#000000"
+      strokeWidth="1.5"
+    />
+  </g>
+</svg>

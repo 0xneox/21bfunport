@@ -57,17 +57,62 @@
     background-color: var(--color-foreground);
     color: var(--color-background);
   }
+
+  .sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+  }
 }
 
 @layer components {
   .labs-link {
     text-decoration: underline;
     text-underline-offset: 0.2em;
-    transition: opacity 80ms ease;
+    transition: all 200ms ease;
+    position: relative;
   }
 
   .labs-link:hover {
     background-color: var(--color-foreground);
     color: var(--color-background);
+  }
+
+  .labs-link:focus {
+    outline: 2px solid var(--color-foreground);
+    outline-offset: 2px;
+  }
+
+  .section-reveal {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 600ms ease-out, transform 600ms ease-out;
+  }
+
+  .section-reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .project-card {
+    transition: all 200ms ease;
+  }
+
+  .project-card:hover {
+    transform: translateX(4px);
+  }
+
+  .nav-item {
+    transition: all 200ms ease;
+  }
+
+  .nav-item:hover {
+    transform: translateX(-4px);
   }
 }
