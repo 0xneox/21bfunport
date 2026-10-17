@@ -35,6 +35,19 @@
   --border: #E5E5E5;
 }
 
+.dark {
+  --background: #000000;
+  --foreground: #FFFFFF;
+  --muted: #000000;
+  --muted-foreground: #999999;
+  --border: #333333;
+}
+
+html, body {
+  transition: background-color 300ms cubic-bezier(0.4, 0, 0.2, 1),
+              color 300ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
 @layer base {
   * {
     border-color: var(--color-border);
@@ -42,11 +55,12 @@
   }
 
   html {
-    background-color: #FFFFFF;
+    background-color: var(--color-background);
+    scroll-behavior: smooth;
   }
 
   body {
-    background-color: #FFFFFF;
+    background-color: var(--color-background);
     color: var(--color-foreground);
     font-family: ui-monospace, "SF Mono", "SFMono-Regular", "JetBrains Mono", "IBM Plex Mono", Menlo, Consolas, monospace;
     -webkit-font-smoothing: antialiased;
@@ -75,13 +89,26 @@
   .labs-link {
     text-decoration: underline;
     text-underline-offset: 0.2em;
-    transition: all 200ms ease;
+    transition: all 300ms cubic-bezier(0.4, 0, 0.2, 1);
     position: relative;
   }
 
-  .labs-link:hover {
+  .labs-link::before {
+    content: "";
+    position: absolute;
+    inset: -4px;
     background-color: var(--color-foreground);
+    opacity: 0;
+    transition: opacity 300ms cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: -1;
+  }
+
+  .labs-link:hover {
     color: var(--color-background);
+  }
+
+  .labs-link:hover::before {
+    opacity: 1;
   }
 
   .labs-link:focus {
@@ -91,8 +118,8 @@
 
   .section-reveal {
     opacity: 0;
-    transform: translateY(20px);
-    transition: opacity 600ms ease-out, transform 600ms ease-out;
+    transform: translateY(40px);
+    transition: opacity 800ms cubic-bezier(0.4, 0, 0.2, 1), transform 800ms cubic-bezier(0.4, 0, 0.2, 1);
   }
 
   .section-reveal.visible {
@@ -101,18 +128,92 @@
   }
 
   .project-card {
-    transition: all 200ms ease;
+    transition: all 300ms cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+  }
+
+  .project-card::before {
+    content: "";
+    position: absolute;
+    left: -16px;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background-color: var(--color-foreground);
+    transform: scaleY(0);
+    transition: transform 300ms cubic-bezier(0.4, 0, 0.2, 1);
   }
 
   .project-card:hover {
-    transform: translateX(4px);
+    transform: translateX(8px);
+  }
+
+  .project-card:hover::before {
+    transform: scaleY(1);
   }
 
   .nav-item {
-    transition: all 200ms ease;
+    transition: all 300ms cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+  }
+
+  .nav-item::before {
+    content: "";
+    position: absolute;
+    left: -12px;
+    top: 50%;
+    transform: translateY(-50%) scaleX(0);
+    width: 8px;
+    height: 8px;
+    background-color: var(--color-foreground);
+    transition: transform 300ms cubic-bezier(0.4, 0, 0.2, 1);
   }
 
   .nav-item:hover {
-    transform: translateX(-4px);
+    transform: translateX(-8px);
+  }
+
+  .nav-item:hover::before {
+    transform: translateY(-50%) scaleX(1);
+  }
+
+  .fade-in {
+    animation: fadeIn 600ms cubic-bezier(0.4, 0, 0.2, 1) forwards;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .stagger-1 { animation-delay: 100ms; }
+  .stagger-2 { animation-delay: 200ms; }
+  .stagger-3 { animation-delay: 300ms; }
+  .stagger-4 { animation-delay: 400ms; }
+  .stagger-5 { animation-delay: 500ms; }
+  .stagger-6 { animation-delay: 600ms; }
+
+  .cursor-glow {
+    position: fixed;
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(circle, var(--color-foreground) 0%, transparent 70%);
+    opacity: 0.03;
+    pointer-events: none;
+    transform: translate(-50%, -50%);
+    transition: opacity 300ms ease;
+    z-index: 0;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .cursor-glow {
+      display: none;
+    }
   }
 }
